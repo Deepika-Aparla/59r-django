@@ -16,7 +16,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from app1.views import view1,view2,view3,dynamicview,movieinfo,temp1,temp2
+from app1.views import getstudents,addemployees,addstudent,view1,view2,view3,dynamicview,movieinfo,temp1,temp2,productsbycategory,productsbyrating,productsbyratings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,6 +26,13 @@ urlpatterns = [
     path("dmv/",dynamicview),
     path("movieinfo/",movieinfo),
     path("show/",temp1),
-    path("second/",temp2)
+    path("second/",temp2),
+    path("products/<str:category>",productsbycategory),
+    path("rating/<str:rating>",productsbyrating),
+    path("prodbyrating/<str:rating>",productsbyratings),
+    path("addstudent/",addstudent),
+    path("addemployees/",addemployees),
+    path("getstudents/",getstudents)
+
 
 ]
